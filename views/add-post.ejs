@@ -1,0 +1,34 @@
+<%- include("./layout/header.ejs") %>
+<div style="max-width: 520px; margin: 20px auto; padding: 20px; background: #f9f9f9; border-radius: 8px; box-shadow: 0 2px 8px #a0bbf786;">
+    <h1 style="text-align: center; font-size: 1.8rem; margin-bottom: 10px; color: #060606;"><%=title%></h1>
+    <form method="post" action="">
+        <div class="form-floating" style="margin-bottom: 15px;">
+            <input
+                required
+                type="text"
+                class="form-control"
+                id="exampleInputTitle"
+                placeholder="Title"
+                name="title"
+                style="width: 100%; padding: 10px; border: 1px solid #a0bbf786; border-radius: 4px;">
+            <label for="exampleInputTitle" class="form-label" style="font-size: 0.9rem; color: #666666;">Title</label>
+        </div>
+        <div class="form-floating" style="margin-bottom: 20px;">
+            <input
+                type="email"
+                class="form-control"
+                id="exampleInputEmail"
+                placeholder="name@example.com"
+                name="author"
+                style="width: 100%; padding: 10px; border: 1px solid #a0bbf786; border-radius: 4px;">
+            <label for="exampleInputEmail" class="form-label" style="font-size: 0.9rem; color: #666666;">Email address</label>
+        </div>
+        <button
+            class="btn btn-primary w-100 py-2"
+            type="submit"
+            style="background-color: #0f2e9f; color: #fff; border: none; padding: 10px; font-size: 1rem; border-radius: 4px; cursor: pointer;">
+            Create
+        </button>
+    </form>
+</div>
+<%- include("./layout/footer.ejs") %>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown List</title>
+</head>
+<body>
+    <h1>Список постів</h1>
+    <select id="dropdown">
+        <option value="">Завантаження...</option>
+    </select>
+
+    <script>
+        // Завантаження даних через GET-запит
+        fetch("/posts")
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Помилка завантаження");
+                }
+                return response.json();
+            })
+            .then(posts => {
+                const dropdown = document.getElementById("dropdown");
+                dropdown.innerHTML = '<option value="">Оберіть пост</option>';
+
+                posts.forEach(post => {
+                    const option = document.createElement("option");
+                    option.value = post.id;
+                    option.textContent = post.title;
+                    dropdown.appendChild(option);
+                });
+            })
+            .catch(error => {
+                console.error(error);
+                const dropdown = document.getElementById("dropdown");
+                dropdown.innerHTML = '<option value="">Не вдалося завантажити</option>';
+            });
+    </script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<%- include("./layout/header.ejs") %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f4f6f9;
+            color: #060606;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #0f2e9f;
+            color: white;
+            font-size: 1em;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-btn:hover {
+            background-color: #0f2e9f;
+        }
+
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 50px 20px;
+        }
+
+        .feature {
+            flex: 1 1 300px;
+            background: white;
+            margin: 10px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px #a0bbf786;
+            text-align: center;
+        }
+
+        .feature h3 {
+            color: #0f2e9f;
+        }
+
+        footer {
+            background-color: #00274d;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 50px;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <section id="features" class="features">
+        <div class="feature">
+            <h3>Етап один</h3>
+            <p>Для початку, потрібно натиснути на вкладку Add post та додати користувача, коли Ви побачите,
+                 що користувач успішно створений, перейдіть до MongoDB та перевірте чи все пройшло успішно</p>
+        </div>
+        <div class="feature">
+            <h3>Етап два</h3>
+            <p>Змініть та/або видаліть користувача. Перевірте чи здійснюються зміни в MongoBD</p>
+        </div>
+        <div class="feature">
+            <h3>Бонус</h3>
+            <p>Перейдіть до вкладки About, та прочитайте відгук від автора</p>
+        </div>
+    </section>
+    <%-include("./layout/footer.ejs")%>
